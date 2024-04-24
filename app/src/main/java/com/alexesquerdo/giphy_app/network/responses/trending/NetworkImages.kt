@@ -9,13 +9,13 @@ data class NetworkImages(
     @Json(name = "fixed_height")
     val fixedHeight: NetworkFixedHeight,
     @Json(name = "fixed_height_downsampled")
-    val fixedHeightDownsampled: NetworkFixedHeightDownsampled,
+    val fixedHeightDownSampled: NetworkFixedHeightDownSampled,
     @Json(name = "fixed_height_small")
     val fixedHeightSmall: NetworkFixedHeightSmall,
     @Json(name = "fixed_width")
     val fixedWidth: NetworkFixedWidth,
     @Json(name = "fixed_width_downsampled")
-    val fixedWidthDownsampled: NetworkFixedWidthDownsampled,
+    val fixedWidthDownSampled: NetworkFixedWidthDownSampled,
     @Json(name = "fixed_width_small")
     val fixedWidthSmall: NetworkFixedWidthSmall,
     @Json(name = "original")

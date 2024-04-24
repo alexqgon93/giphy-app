@@ -7,9 +7,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class NetworkAnalytics(
     @Json(name = "onclick")
-    val onclick: NetworkOnclick,
+    val onclick: NetworkOnClick,
     @Json(name = "onload")
-    val onload: NetworkOnload,
+    val onload: NetworkOnLoad,
     @Json(name = "onsent")
-    val onsent: NetworkOnsent
+    val onsent: NetworkOnSent
 )

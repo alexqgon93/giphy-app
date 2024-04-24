@@ -5,7 +5,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class NetworkFixedWidthDownsampled(
+data class NetworkFixedHeightDownSampled(
     @Json(name = "height")
     val height: String,
     @Json(name = "size")
