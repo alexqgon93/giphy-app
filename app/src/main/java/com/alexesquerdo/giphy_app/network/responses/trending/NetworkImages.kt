@@ -1,23 +1,24 @@
 package com.alexesquerdo.giphy_app.network.responses.trending
 
 
+import com.alexesquerdo.giphy_app.network.responses.common.NetworkMeasures
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class NetworkImages(
     @Json(name = "fixed_height")
-    val fixedHeight: NetworkFixedHeight,
+    val fixedHeight: NetworkMeasures,
     @Json(name = "fixed_height_downsampled")
-    val fixedHeightDownSampled: NetworkFixedHeightDownSampled,
+    val fixedHeightDownSampled: NetworkMeasures,
     @Json(name = "fixed_height_small")
-    val fixedHeightSmall: NetworkFixedHeightSmall,
+    val fixedHeightSmall: NetworkMeasures,
     @Json(name = "fixed_width")
-    val fixedWidth: NetworkFixedWidth,
+    val fixedWidth: NetworkMeasures,
     @Json(name = "fixed_width_downsampled")
-    val fixedWidthDownSampled: NetworkFixedWidthDownSampled,
+    val fixedWidthDownSampled: NetworkMeasures,
     @Json(name = "fixed_width_small")
-    val fixedWidthSmall: NetworkFixedWidthSmall,
+    val fixedWidthSmall: NetworkMeasures,
     @Json(name = "original")
     val original: NetworkOriginal
 )
