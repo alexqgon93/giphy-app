@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit
 @InstallIn(SingletonComponent::class)
 @Module
 object NetworkModule {
-    private const val BASE_URL = "https://api.giphy.com/v1/gifs/"
+    private const val BASE_URL = "https://api.giphy.com"
 
     @Provides
     fun providesOkHttpClient(): OkHttpClient {
