@@ -54,6 +54,10 @@ android {
     }
 }
 
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
 
 val localProperties = gradleLocalProperties(rootDir, providers)
 val apikey: String = localProperties.getProperty("api_key")
@@ -80,6 +84,10 @@ dependencies {
     ksp(libs.moshi.kotlin.codegen)
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
+    testImplementation(libs.mockwebserver)
+    testImplementation(libs.test.junit5.params)
+    testImplementation(libs.test.junit5.api)
+    testImplementation(libs.test.junit5.engine)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))

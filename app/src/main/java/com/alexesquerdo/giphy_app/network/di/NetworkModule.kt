@@ -17,7 +17,6 @@ import java.util.concurrent.TimeUnit
 @Module
 object NetworkModule {
     private const val BASE_URL = "https://api.giphy.com"
-
     @Provides
     fun providesOkHttpClient(): OkHttpClient {
         val okHttpClient = OkHttpClient.Builder().addInterceptor { chain ->

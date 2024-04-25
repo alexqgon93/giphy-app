@@ -47,7 +47,7 @@ data class NetworkData(
     @Json(name = "url")
     val url: String,
     @Json(name = "user")
-    val user: NetworkUser,
+    val user: NetworkUser?,
     @Json(name = "username")
     val username: String
 )
