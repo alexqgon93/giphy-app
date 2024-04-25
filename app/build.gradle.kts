@@ -43,6 +43,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.11"
@@ -60,7 +61,7 @@ tasks.withType<Test> {
 
 
 val localProperties = gradleLocalProperties(rootDir, providers)
-val apikey: String = localProperties.getProperty("api_key")
+val apiKey: String = localProperties.getProperty("api_key")
 
 dependencies {
 

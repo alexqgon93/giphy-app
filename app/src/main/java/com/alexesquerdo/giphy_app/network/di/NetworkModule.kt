@@ -1,5 +1,6 @@
 package com.alexesquerdo.giphy_app.network.di
 
+import com.alexesquerdo.giphy_app.BuildConfig
 import com.alexesquerdo.giphy_app.network.api.ApiService
 import dagger.Module
 import dagger.Provides
@@ -17,12 +18,13 @@ import java.util.concurrent.TimeUnit
 @Module
 object NetworkModule {
     private const val BASE_URL = "https://api.giphy.com"
+
     @Provides
     fun providesOkHttpClient(): OkHttpClient {
         val okHttpClient = OkHttpClient.Builder().addInterceptor { chain ->
             val original: Request = chain.request()
             val httpUrl: HttpUrl = original.url
-            val url = httpUrl.newBuilder().addQueryParameter("api_key", "").build()
+            val url = httpUrl.newBuilder().addQueryParameter("api_key", BuildConfig.api_key).build()
             return@addInterceptor chain.proceed(request = original.newBuilder().url(url).build())
         }.callTimeout(10, TimeUnit.SECONDS).connectTimeout(10, TimeUnit.SECONDS)
             .writeTimeout(10, TimeUnit.SECONDS)
