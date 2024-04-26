@@ -81,6 +81,8 @@ dependencies {
     implementation(libs.converter.moshi)
     implementation(libs.arrow.core)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
     ksp(libs.hilt.android.compiler)
     ksp(libs.moshi.kotlin.codegen)
     testImplementation(libs.junit)
