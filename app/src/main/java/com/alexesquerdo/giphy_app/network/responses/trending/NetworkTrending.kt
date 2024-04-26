@@ -7,7 +7,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class NetworkTrending(
     @Json(name = "data")
-    val `data`: List<NetworkData>,
+    val giphyItem: List<NetworkGiphyItem>,
     @Json(name = "meta")
     val meta: NetworkMeta,
     @Json(name = "pagination")

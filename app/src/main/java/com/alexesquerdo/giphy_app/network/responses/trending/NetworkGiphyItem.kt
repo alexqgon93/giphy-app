@@ -5,7 +5,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class NetworkData(
+data class NetworkGiphyItem(
     @Json(name = "alt_text")
     val altText: String,
     @Json(name = "analytics")
