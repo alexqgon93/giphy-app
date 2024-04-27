@@ -22,7 +22,7 @@ import com.alexesquerdo.giphy_app.network.responses.trending.NetworkTrending
 import com.alexesquerdo.giphy_app.network.responses.trending.NetworkUser
 
 fun NetworkTrending.toDomainModel() = Trending(
-    giphyItem = giphyItem.map { it.toDomainModel() },
+    giphyItems = giphyItem.map { it.toDomainModel() },
     meta = meta.toDomainModel(),
     pagination = pagination.toDomainModel()
 )
