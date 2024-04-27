@@ -7,7 +7,7 @@ import com.alexesquerdo.giphy_app.domain.models.Trending
 import javax.inject.Inject
 
 class UseCaseTrending @Inject constructor(private val repository: Repository) {
-    suspend operator fun invoke(): Either<AppError, Trending> = repository.getTrendingFromApi()
+    suspend operator fun invoke(): Either<AppError, Trending> = repository.getTrending()
     /*.fold(
     ifLeft = {
         Either.Left(it)
