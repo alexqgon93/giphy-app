@@ -20,21 +20,28 @@ object NetworkModule {
     private const val BASE_URL = "https://api.giphy.com"
 
     @Provides
-    fun providesOkHttpClient(): OkHttpClient {
+    fun providesOkHttpClient(
+        httpLoggingInterceptor: HttpLoggingInterceptor,
+    ): OkHttpClient {
         val okHttpClient = OkHttpClient.Builder().addInterceptor { chain ->
             val original: Request = chain.request()
             val httpUrl: HttpUrl = original.url
-            val url = httpUrl.newBuilder().addQueryParameter("api_key", BuildConfig.api_key).build()
+            val url = httpUrl.newBuilder()
+                .addQueryParameter("api_key", BuildConfig.api_key)
+                .build()
             return@addInterceptor chain.proceed(request = original.newBuilder().url(url).build())
         }.callTimeout(10, TimeUnit.SECONDS).connectTimeout(10, TimeUnit.SECONDS)
             .writeTimeout(10, TimeUnit.SECONDS)
             .readTimeout(10, TimeUnit.SECONDS)
-        return okHttpClient.build()
+        return okHttpClient.addInterceptor(httpLoggingInterceptor).build()
     }
 
     @Provides
     fun providesHttpLoggingInterceptor(): HttpLoggingInterceptor =
         HttpLoggingInterceptor().apply { this.level = HttpLoggingInterceptor.Level.BODY }
+
+    @Provides
+    fun providesMoshiConverterFactory(): MoshiConverterFactory = MoshiConverterFactory.create()
 
     @Provides
     fun providesRetrofit(
@@ -45,7 +52,7 @@ object NetworkModule {
         .addConverterFactory(converterFactory).build()
 
     @Provides
-    fun providesTHeMovieDBInterface(
+    fun providesGiphyInterface(
         converterFactory: MoshiConverterFactory,
         okHttpClient: OkHttpClient,
     ): ApiService {
