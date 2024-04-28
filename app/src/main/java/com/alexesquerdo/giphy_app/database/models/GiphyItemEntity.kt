@@ -8,6 +8,8 @@ import com.alexesquerdo.giphy_app.domain.models.User
 
 @Entity(tableName = "gifentity")
 data class GiphyItemEntity(
+    @PrimaryKey(autoGenerate = true)
+    val idGif: Int = 0,
     val altText: String,
     val analytics: Analytics,
     val analyticsResponsePayload: String,
@@ -15,7 +17,6 @@ data class GiphyItemEntity(
     val bitlyUrl: String,
     val contentUrl: String,
     val embedUrl: String,
-    @PrimaryKey(autoGenerate = false)
     val id: String,
     val images: Images,
     val importDatetime: String,

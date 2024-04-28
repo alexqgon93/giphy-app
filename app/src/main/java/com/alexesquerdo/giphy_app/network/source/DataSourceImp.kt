@@ -10,7 +10,8 @@ import javax.inject.Inject
 class DataSourceImp @Inject constructor(
     private val apiService: ApiService,
 ) : DataSource {
-    override suspend fun getTrending(): Either<Failure, NetworkTrending> = tryCall {
-        apiService.getTrending(offset = 0, limit = 100)
-    }
+    override suspend fun getTrending(offset: Int, limit: Int): Either<Failure, NetworkTrending> =
+        tryCall {
+            apiService.getTrending(offset = offset, limit = limit)
+        }
 }
