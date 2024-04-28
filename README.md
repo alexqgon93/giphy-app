@@ -17,17 +17,29 @@ Android app repository integrates Hilt DI, Clean Architecture with MVVM, and RxJ
 * Finally on local.properties add this line:
 ```  
 api_key=<Your Api Key>  
-```  
+```
 
-## Libraries used on this project
-- [Kotlin](https://kotlinlang.org/)
-- [JetpackCompose](https://developer.android.com/jetpack/compose)
-- [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
-- [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
-- [Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
-- [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/)
-- [Material Design 3](https://developer.android.com/jetpack/compose/designsystems/material3)
-- [KSP](https://github.com/google/ksp)
-- [JUnit](https://developer.android.com/training/testing/local-tests)
-- [Mockk](https://mockk.io)
-- [Secrets Gradle Plugin for Android](https://github.com/google/secrets-gradle-plugin)
+# Dependencies
+
+This project uses the following dependencies:
+
+- `androidx.core.ktx`: A set of Kotlin extensions that are included with Android Jetpack and other Android libraries.
+- `androidx.lifecycle.runtime.ktx`: Lifecycle-aware components perform actions in response to a change in the lifecycle status of another component.
+- `androidx.activity.compose`: A library that contains Compose-specific APIs for Activities.
+- `androidx.compose.bom`: Bill of Materials for Jetpack Compose. It simplifies the declaration of Compose dependencies.
+- `androidx.ui` and `androidx.ui.graphics`: Libraries for building UIs with Jetpack Compose.
+- `androidx.ui.tooling.preview`: A library that provides previews of your Compose UI.
+- `androidx.material3`: Material Design 3 components for Android.
+- `androidx.hilt.navigation.compose`: A library that provides extensions to use Hilt with Jetpack Compose.
+- `hilt.android`: A dependency injection library for Android.
+- `logging.interceptor`: An HTTP/HTTP2 client for Android and Java applications.
+- `retrofit`: A type-safe HTTP client for Android and Java.
+- `moshi` and `moshi.kotlin`: Libraries for parsing JSON into Kotlin and Java objects.
+- `converter.moshi`: A converter for serialization to and from JSON.
+- `arrow.core`: Functional companion to Kotlin's Standard Library.
+- `androidx.lifecycle.viewmodel.ktx`: ViewModel is a class that is responsible for preparing and managing the data for an Activity or a Fragment.
+- `androidx.room.ktx`: A persistence library that provides an abstraction layer over SQLite.
+- `coil.compose` and `coil.gif`: An image loading library for Android backed by Kotlin Coroutines.
+- `lottie.compose`: A library that parses Adobe After Effects animations exported as JSON with Bodymovin and renders them natively on mobile.
+- `androidx.paging.runtime.ktx` and `androidx.paging.compose`: Libraries that help you load and display small chunks of data at a time.
+- `androidx.room.compiler`, `hilt.android.compiler`, `moshi.kotlin.codegen`: Compiler plugins for Room, Hilt, and Moshi respectively.

@@ -5,5 +5,5 @@ import com.alexesquerdo.giphy_app.network.responses.trending.NetworkTrending
 import com.alexesquerdo.giphy_app.network.utils.Failure
 
 fun interface DataSource {
-    suspend fun getTrending(): Either<Failure, NetworkTrending>
+    suspend fun getTrending(offset: Int, limit: Int): Either<Failure, NetworkTrending>
 }

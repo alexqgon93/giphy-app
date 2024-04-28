@@ -7,19 +7,19 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class NetworkMeasures(
     @Json(name = "height")
-    val height: String,
+    val height: String?,
     @Json(name = "mp4")
     val mp4: String?,
     @Json(name = "mp4_size")
     val mp4Size: String?,
     @Json(name = "size")
-    val size: String,
+    val size: String?,
     @Json(name = "url")
-    val url: String,
+    val url: String?,
     @Json(name = "webp")
-    val webp: String,
+    val webp: String?,
     @Json(name = "webp_size")
-    val webpSize: String,
+    val webpSize: String?,
     @Json(name = "width")
-    val width: String
+    val width: String?
 )

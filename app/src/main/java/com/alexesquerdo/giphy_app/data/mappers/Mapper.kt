@@ -1,5 +1,6 @@
 package com.alexesquerdo.giphy_app.data.mappers
 
+import com.alexesquerdo.giphy_app.database.models.GiphyItemEntity
 import com.alexesquerdo.giphy_app.domain.common.Measures
 import com.alexesquerdo.giphy_app.domain.models.Analytics
 import com.alexesquerdo.giphy_app.domain.models.Images
@@ -113,4 +114,54 @@ fun NetworkOriginal.toDomainModel() = Original(
     webp = webp,
     webpSize = webpSize,
     width = width
+)
+
+fun NetworkGiphyItem.toGifEntity() = GiphyItemEntity(
+    altText = altText,
+    analytics = analytics.toDomainModel(),
+    analyticsResponsePayload = analyticsResponsePayload,
+    bitlyGiUrl = bitlyGifUrl,
+    bitlyUrl = bitlyUrl,
+    contentUrl = contentUrl,
+    embedUrl = embedUrl,
+    id = id,
+    images = images.toDomainModel(),
+    importDatetime = importDatetime,
+    isSticker = isSticker,
+    rating = rating,
+    slug = slug,
+    source = source,
+    sourcePostUrl = sourcePostUrl,
+    sourceTld = sourceTld,
+    title = title,
+    trendingDatetime = trendingDatetime,
+    type = type,
+    url = url,
+    user = user?.toDomainModel(),
+    username = username
+)
+
+fun GiphyItemEntity.toGiphyItem() = GiphyItem(
+    altText = altText,
+    analytics = analytics,
+    analyticsResponsePayload = analyticsResponsePayload,
+    bitlyGiUrl = bitlyGiUrl,
+    bitlyUrl = bitlyUrl,
+    contentUrl = contentUrl,
+    embedUrl = embedUrl,
+    id = id,
+    images = images,
+    importDatetime = importDatetime,
+    isSticker = isSticker,
+    rating = rating,
+    slug = slug,
+    source = source,
+    sourcePostUrl = sourcePostUrl,
+    sourceTld = sourceTld,
+    title = title,
+    trendingDatetime = trendingDatetime,
+    type = type,
+    url = url,
+    user = user,
+    username = username
 )
