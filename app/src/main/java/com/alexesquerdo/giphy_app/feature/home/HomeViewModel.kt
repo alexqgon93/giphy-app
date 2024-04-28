@@ -42,7 +42,15 @@ class HomeViewModel @Inject constructor(
     }
 
     fun onChangeValue(input: String) {
-        // we need to filter the list of gifs items
-
+        _state.update { uiState ->
+            uiState.copy(inputText = input,
+                gifItems = trending.giphyItems.filter {
+                    it.title.contains(
+                        input,
+                        ignoreCase = true
+                    )
+                }
+            )
+        }
     }
 }

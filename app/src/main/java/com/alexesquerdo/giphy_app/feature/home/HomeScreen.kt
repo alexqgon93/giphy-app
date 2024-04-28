@@ -57,7 +57,6 @@ fun HomeScreen(
     viewModel: HomeViewModel,
     onClickItem: (GiphyItem) -> Unit,
 ) {
-    var filledText by remember { mutableStateOf("") }
     Box(
         modifier = Modifier
             .fillMaxSize(),
@@ -83,7 +82,6 @@ fun HomeScreen(
                         modifier = Modifier.fillMaxWidth(),
                         value = state.inputText,
                         onValueChange = { input ->
-                            filledText = input
                             viewModel.onChangeValue(input)
                         },
                         textStyle = LocalTextStyle.current.copy(
