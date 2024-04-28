@@ -9,7 +9,7 @@ fun interface ApiService {
     
     @GET("/v1/gifs/trending")
     suspend fun getTrending(
-        @Query("offset") offset: Int,
+        @Query("offset") offset: Int, // used for the pagination we need to know the count so it will increase this offset
         @Query("limit") limit: Int,
     ): Response<NetworkTrending>
 }
