@@ -43,6 +43,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.11"
@@ -54,9 +55,13 @@ android {
     }
 }
 
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+
 
 val localProperties = gradleLocalProperties(rootDir, providers)
-val apikey: String = localProperties.getProperty("api_key")
+val apiKey: String = localProperties.getProperty("api_key")
 
 dependencies {
 
@@ -68,6 +73,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.hilt.android)
     implementation(libs.logging.interceptor)
     implementation(libs.retrofit)
@@ -76,10 +82,19 @@ dependencies {
     implementation(libs.converter.moshi)
     implementation(libs.arrow.core)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.gif)
+    implementation(libs.lottie.compose)
+    ksp(libs.androidx.room.compiler)
     ksp(libs.hilt.android.compiler)
     ksp(libs.moshi.kotlin.codegen)
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
+    testImplementation(libs.mockwebserver)
+    testImplementation(libs.test.junit5.params)
+    testImplementation(libs.test.junit5.api)
+    testImplementation(libs.test.junit5.engine)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
