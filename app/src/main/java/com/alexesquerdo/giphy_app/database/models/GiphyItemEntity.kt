@@ -2,11 +2,14 @@ package com.alexesquerdo.giphy_app.database.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.alexesquerdo.giphy_app.domain.models.Analytics
+import com.alexesquerdo.giphy_app.domain.models.Images
+import com.alexesquerdo.giphy_app.domain.models.User
 
-@Entity(tableName = "data_entity")
+@Entity(tableName = "gifentity")
 data class GiphyItemEntity(
     val altText: String,
-    val analytics: AnalyticsEntity,
+    val analytics: Analytics,
     val analyticsResponsePayload: String,
     val bitlyGiUrl: String,
     val bitlyUrl: String,
@@ -14,7 +17,7 @@ data class GiphyItemEntity(
     val embedUrl: String,
     @PrimaryKey(autoGenerate = false)
     val id: String,
-    val images: ImagesEntity,
+    val images: Images,
     val importDatetime: String,
     val isSticker: Int,
     val rating: String,
@@ -26,7 +29,7 @@ data class GiphyItemEntity(
     val trendingDatetime: String,
     val type: String,
     val url: String,
-    val user: UserEntity?,
+    val user: User?,
     val username: String,
 )
 
