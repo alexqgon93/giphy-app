@@ -1,5 +1,15 @@
 package com.alexesquerdo.giphy_app.data.mappers
 
+import com.alexesquerdo.giphy_app.database.models.AnalyticsEntity
+import com.alexesquerdo.giphy_app.database.models.GiphyItemEntity
+import com.alexesquerdo.giphy_app.database.models.ImagesEntity
+import com.alexesquerdo.giphy_app.database.models.MeasuresEntity
+import com.alexesquerdo.giphy_app.database.models.MetaEntity
+import com.alexesquerdo.giphy_app.database.models.OriginalEntity
+import com.alexesquerdo.giphy_app.database.models.PaginationEntity
+import com.alexesquerdo.giphy_app.database.models.TrendingEntity
+import com.alexesquerdo.giphy_app.database.models.UrlEntity
+import com.alexesquerdo.giphy_app.database.models.UserEntity
 import com.alexesquerdo.giphy_app.domain.common.Measures
 import com.alexesquerdo.giphy_app.domain.models.Analytics
 import com.alexesquerdo.giphy_app.domain.models.Images
@@ -103,6 +113,100 @@ fun NetworkMeasures.toDomainModel() = Measures(
 )
 
 fun NetworkOriginal.toDomainModel() = Original(
+    frames = frames,
+    hash = hash,
+    height = height,
+    mp4 = mp4,
+    mp4Size = mp4Size,
+    size = size,
+    url = url,
+    webp = webp,
+    webpSize = webpSize,
+    width = width
+)
+
+fun TrendingEntity.toDomainModel() = Trending(
+    giphyItems = giphyItems.map { it.toDomainModel() },
+    meta = meta.toDomainModel(),
+    pagination = pagination.toDomainModel()
+)
+
+fun GiphyItemEntity.toDomainModel() = GiphyItem(
+    altText = altText,
+    analytics = analytics.toDomainModel(),
+    analyticsResponsePayload = analyticsResponsePayload,
+    bitlyGiUrl = bitlyGiUrl,
+    bitlyUrl = bitlyUrl,
+    contentUrl = contentUrl,
+    embedUrl = embedUrl,
+    id = id,
+    images = images.toDomainModel(),
+    importDatetime = importDatetime,
+    isSticker = isSticker,
+    rating = rating,
+    slug = slug,
+    source = source,
+    sourcePostUrl = sourcePostUrl,
+    sourceTld = sourceTld,
+    title = title,
+    trendingDatetime = trendingDatetime,
+    type = type,
+    url = url,
+    user = user?.toDomainModel(),
+    username = username
+)
+
+fun MetaEntity.toDomainModel() = Meta(msg = msg, responseId = responseId, status = status)
+
+fun PaginationEntity.toDomainModel() = Pagination(
+    count = count,
+    offset = offset,
+    totalCount = totalCount
+)
+
+fun AnalyticsEntity.toDomainModel() = Analytics(
+    onClick = onClick.toDomainModel(),
+    onLoad = onLoad.toDomainModel(),
+    onSent = onSent.toDomainModel(),
+)
+
+fun ImagesEntity.toDomainModel() = Images(
+    fixedHeight = fixedHeight.toDomainModel(),
+    fixedHeightDownSampled = fixedHeightDownSampled.toDomainModel(),
+    fixedHeightSmall = fixedHeightSmall.toDomainModel(),
+    fixedWidth = fixedWidth.toDomainModel(),
+    fixedWidthDownSampled = fixedWidthDownSampled.toDomainModel(),
+    fixedWidthSmall = fixedWidthSmall.toDomainModel(),
+    original = original.toDomainModel(),
+)
+
+fun UserEntity.toDomainModel() = User(
+    avatarUrl = avatarUrl,
+    bannerImage = bannerImage,
+    bannerUrl = bannerUrl,
+    description = description,
+    displayName = displayName,
+    instagramUrl = instagramUrl,
+    isVerified = isVerified,
+    profileUrl = profileUrl,
+    username = username,
+    websiteUrl = websiteUrl
+)
+
+fun UrlEntity.toDomainModel() = Url(url = url)
+
+fun MeasuresEntity.toDomainModel() = Measures(
+    height = height,
+    mp4 = mp4,
+    mp4Size = mp4Size,
+    size = size,
+    url = url,
+    webp = webp,
+    webpSize = webpSize,
+    width = width
+)
+
+fun OriginalEntity.toDomainModel() = Original(
     frames = frames,
     hash = hash,
     height = height,
