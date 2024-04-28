@@ -6,6 +6,7 @@ data class HomeUiState(
     val screenState: ScreenState = ScreenState.LOADING,
     val gifItems: List<GiphyItem>? = null,
     val inputText: String = "",
+    val itemSelected: GiphyItem? = null
 )
 
 

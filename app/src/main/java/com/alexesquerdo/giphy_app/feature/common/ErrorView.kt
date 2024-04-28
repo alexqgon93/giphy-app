@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -37,7 +38,10 @@ fun ErrorView() = Column(modifier = Modifier.fillMaxSize()) {
             composition = composition,
             progress = { progress },
         )
-        Text(stringResource(R.string.error_text_try_again_screen))
+        Text(
+            stringResource(R.string.error_text_try_again_screen),
+            style = MaterialTheme.typography.headlineLarge
+        )
     }
 }
 
