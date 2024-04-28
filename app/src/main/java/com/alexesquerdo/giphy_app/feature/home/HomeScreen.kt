@@ -49,7 +49,6 @@ fun HomeScreen(
     viewModel: HomeViewModel,
     onClickItem: () -> Unit,
 ) {
-    var showDetailScreen by remember { mutableStateOf(false) }
     when (state.screenState) {
         ERROR -> ErrorView()
 
@@ -91,7 +90,6 @@ fun HomeScreen(
                     onClickItem = { item ->
                         state.itemSelected = item
                         onClickItem()
-                        //showDetailScreen = true
                     }
                 )
             }
@@ -103,9 +101,5 @@ fun HomeScreen(
         ) {
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
         }
-    }
-
-    if (showDetailScreen) {
-        DetailScreenRoute(viewModel = viewModel)
     }
 }
