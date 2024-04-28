@@ -6,6 +6,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.alexesquerdo.giphy_app.R
+import com.alexesquerdo.giphy_app.components.molecules.header.HeaderMolecule
+import com.alexesquerdo.giphy_app.components.molecules.header.HeaderMoleculeModel
 import com.alexesquerdo.giphy_app.feature.home.HomeViewModel
 import com.alexesquerdo.giphy_app.feature.home.ScreenState
 import com.alexesquerdo.giphy_app.navigation.main.NavigationMainHost
@@ -23,7 +26,15 @@ internal fun MainScreen(
 ) {
     Scaffold(
         topBar = {
-            // using the screen state we will set the header
+            HeaderMolecule(
+                model = HeaderMoleculeModel(
+                    titleImage = R.drawable.ic_logo,
+                    enableBackPressed = screenState.showUpNavigation,
+                    onBackPressed = {
+                        screenState.onUpClick()
+                    },
+                )
+            )
         },
         content = { padding ->
             Box(modifier = Modifier.padding(padding)) {
