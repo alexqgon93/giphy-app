@@ -12,7 +12,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            GiphyappTheme(darkTheme = true) {
+            GiphyappTheme(darkTheme = false) {
                 Navigation()
             }
         }

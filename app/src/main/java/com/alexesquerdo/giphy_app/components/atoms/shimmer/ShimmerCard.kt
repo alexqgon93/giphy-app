@@ -1,4 +1,4 @@
-package com.alexesquerdo.giphy_app.components.atoms
+package com.alexesquerdo.giphy_app.components.atoms.shimmer
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.InfiniteRepeatableSpec
@@ -20,7 +20,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.alexesquerdo.giphy_app.ui.theme.GiphyappTheme
 
 @Composable
 fun ShimmerCard() {
@@ -72,3 +74,7 @@ private fun ShimmerAnimation(
             .background(brush = brush)
     )
 }
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewShimmerCard() = GiphyappTheme { ShimmerCard() }
