@@ -1,8 +1,8 @@
-package com.alexesquerdo.giphy_app.data.sources
+package com.alexesquerdo.giphy_app.network.sources
 
 import arrow.core.getOrElse
-import com.alexesquerdo.giphy_app.data.common.BaseDataSourceTest
-import com.alexesquerdo.giphy_app.data.common.MockApiResponse
+import com.alexesquerdo.giphy_app.network.common.BaseDataSourceTest
+import com.alexesquerdo.giphy_app.network.common.MockApiResponse
 import com.alexesquerdo.giphy_app.network.source.DataSource
 import com.alexesquerdo.giphy_app.network.source.DataSourceImp
 import kotlinx.coroutines.runBlocking
