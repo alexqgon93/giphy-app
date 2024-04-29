@@ -1,6 +1,5 @@
 package com.alexesquerdo.giphy_app.ui.utils
 
-import com.alexesquerdo.giphy_app.domain.models.GiphyItem
 import com.alexesquerdo.giphy_app.mocks.gifItemLeo
 import com.alexesquerdo.giphy_app.mocks.gifItemPiscis
 import org.junit.jupiter.api.Test

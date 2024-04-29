@@ -5,7 +5,10 @@ import com.alexesquerdo.giphy_app.domain.common.Url
 import com.alexesquerdo.giphy_app.domain.models.Analytics
 import com.alexesquerdo.giphy_app.domain.models.GiphyItem
 import com.alexesquerdo.giphy_app.domain.models.Images
+import com.alexesquerdo.giphy_app.domain.models.Meta
 import com.alexesquerdo.giphy_app.domain.models.Original
+import com.alexesquerdo.giphy_app.domain.models.Pagination
+import com.alexesquerdo.giphy_app.domain.models.Trending
 
 val gifItemPiscis = GiphyItem(
     altText = "vivendo",
@@ -209,4 +212,18 @@ val gifItemLeo = GiphyItem(
     url = "https://search.yahoo.com/search?p=dissentiunt",
     user = null,
     username = "Karla Gordon"
+)
+
+val trendingMock = Trending(
+    listOf(),
+    meta = Meta(
+        msg = "ullamcorper",
+        responseId = "tritani",
+        status = 2503
+    ),
+    pagination = Pagination(
+        count = 7736,
+        offset = 5237,
+        totalCount = 6246
+    ),
 )
