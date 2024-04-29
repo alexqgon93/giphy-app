@@ -1,6 +1,5 @@
 package com.alexesquerdo.giphy_app.components.atoms.cardAtom
 
-import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import com.alexesquerdo.giphy_app.mocks.gifItemMock
