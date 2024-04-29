@@ -1,4 +1,4 @@
-package com.alexesquerdo.giphy_app.data.common
+package com.alexesquerdo.giphy_app.network.common
 
 import com.alexesquerdo.giphy_app.network.api.ApiService
 import com.squareup.moshi.Moshi

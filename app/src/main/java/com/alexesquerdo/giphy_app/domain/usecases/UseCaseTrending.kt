@@ -8,18 +8,4 @@ import javax.inject.Inject
 
 class UseCaseTrending @Inject constructor(private val repository: Repository) {
     suspend operator fun invoke(): Either<AppError, Trending> = repository.getTrending()
-    /*.fold(
-    ifLeft = {
-        Either.Left(it)
-        repository.insertTrending(it.toDatabase())
-    },
-    ifRight = {
-        Either.Right(it) }
-)
-if (trending.isLeft()) {
-    repository.insertTrending(trending.toDatabase())
-} else {
-    repository.getTrendingFormDd()
-}
-}*/
 }

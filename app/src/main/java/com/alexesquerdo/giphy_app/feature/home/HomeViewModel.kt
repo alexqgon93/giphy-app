@@ -4,8 +4,8 @@ import com.alexesquerdo.giphy_app.domain.usecases.UseCaseTrending
 import dagger.hilt.android.lifecycle.HiltViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.alexesquerdo.giphy_app.domain.models.GiphyItem
 import com.alexesquerdo.giphy_app.domain.models.Trending
+import com.alexesquerdo.giphy_app.ui.utils.filterGiphyItemsByTitle
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -43,13 +43,12 @@ class HomeViewModel @Inject constructor(
 
     fun onChangeValue(input: String) {
         _state.update { uiState ->
-            uiState.copy(inputText = input,
-                gifItems = trending.giphyItems.filter {
-                    it.title.contains(
-                        input,
-                        ignoreCase = true
-                    )
-                }
+            uiState.copy(
+                inputText = input,
+                gifItems = filterGiphyItemsByTitle(
+                    giphyItems = trending.giphyItems,
+                    input = input
+                )
             )
         }
     }

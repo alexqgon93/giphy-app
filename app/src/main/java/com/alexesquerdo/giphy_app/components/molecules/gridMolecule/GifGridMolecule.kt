@@ -1,4 +1,4 @@
-package com.alexesquerdo.giphy_app.components.molecules
+package com.alexesquerdo.giphy_app.components.molecules.gridMolecule
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -9,7 +9,7 @@ import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.alexesquerdo.giphy_app.components.atoms.GifCardAtom
+import com.alexesquerdo.giphy_app.components.atoms.cardAtom.GifCardAtom
 import com.alexesquerdo.giphy_app.domain.models.GiphyItem
 
 

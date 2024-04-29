@@ -1,4 +1,4 @@
-package com.alexesquerdo.giphy_app.data.common
+package com.alexesquerdo.giphy_app.network.common
 
 import java.io.BufferedReader
 import java.io.FileInputStream

@@ -1,4 +1,4 @@
-package com.alexesquerdo.giphy_app.data.common
+package com.alexesquerdo.giphy_app.network.common
 
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.jupiter.api.AfterEach

@@ -60,9 +60,7 @@ internal fun HeaderMolecule(model: HeaderMoleculeModel) = with(model) {
             containerColor = Color.White,
             titleContentColor = Color.Black,
         ),
-        modifier = Modifier
-            .background(color = Color.White)
-            //.padding(start = 10.dp, end = 10.dp)
+        modifier = Modifier.background(color = Color.White)
     )
 }
 

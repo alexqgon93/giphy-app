@@ -5,4 +5,5 @@
     <string name="error_text_try_again_screen">There has been an error, please try again later</string>
     <string name="logo_giphy">logo giphy</string>
     <string name="back_content_desciption">Back</string>
+    <string name="content_description_gif_card_atom">content description of %1$s</string>
 </resources>
