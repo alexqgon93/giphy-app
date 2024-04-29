@@ -4,7 +4,6 @@ import androidx.compose.ui.test.hasContentDescription
 import androidx.compose.ui.test.junit4.createComposeRule
 import com.alexesquerdo.giphy_app.R
 import org.junit.Before
-
 import org.junit.Rule
 import org.junit.Test
 

@@ -4,7 +4,6 @@ import com.alexesquerdo.giphy_app.domain.usecases.UseCaseTrending
 import dagger.hilt.android.lifecycle.HiltViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.alexesquerdo.giphy_app.domain.models.GiphyItem
 import com.alexesquerdo.giphy_app.domain.models.Trending
 import com.alexesquerdo.giphy_app.ui.utils.filterGiphyItemsByTitle
 import kotlinx.coroutines.delay
