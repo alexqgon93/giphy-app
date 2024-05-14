@@ -6,4 +6,9 @@
     <string name="logo_giphy">logo giphy</string>
     <string name="back_content_desciption">Back</string>
     <string name="content_description_gif_card_atom">content description of %1$s</string>
+    <string name="share_gif_content_description">Share Gif</string>
+    <string name="home_content_description">Home Description</string>
+    <string name="favorite_content_description">Favorite Description</string>
+    <string name="account_circle_content_description">AccountCircle Description</string>
+    <string name="settings_content_description">Settings Description</string>
 </resources>

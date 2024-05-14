@@ -75,6 +75,7 @@ internal fun HeaderMolecule(model: HeaderMoleculeModel) = with(model) {
             .padding(start = 10.dp, end = 10.dp),
         actions = {
             element?.let {
+                if (it.url.isEmpty()) return@let
                 IconButton(
                     onClick = { showDropDown = !showDropDown },
                     modifier = Modifier.size(32.dp)
