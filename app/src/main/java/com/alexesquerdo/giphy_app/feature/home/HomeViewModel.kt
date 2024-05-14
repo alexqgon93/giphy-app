@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.alexesquerdo.giphy_app.domain.models.Trending
 import com.alexesquerdo.giphy_app.ui.utils.filterGiphyItemsByTitle
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -24,7 +23,6 @@ class HomeViewModel @Inject constructor(
     private lateinit var trending: Trending
 
     fun getTrending() = viewModelScope.launch {
-        delay(3000)
         useCaseTrending.invoke().fold(
             ifLeft = {
                 _state.update { it.copy(screenState = ScreenState.ERROR) }
