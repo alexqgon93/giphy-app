@@ -2,6 +2,7 @@ package com.alexesquerdo.giphy_app.network.responses.trending
 
 
 import com.alexesquerdo.giphy_app.network.responses.common.NetworkMeasures
+import com.alexesquerdo.giphy_app.network.responses.common.NetworkOriginal
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 

@@ -15,5 +15,21 @@ class MockApiResponse {
         fun serviceTrendingError(): MockResponse =
             MockResponse().setBody(ResponseStubs.getResponseError())
                 .setResponseCode(ERROR)
+
+        fun serviceEmojisSuccess(): MockResponse =
+            MockResponse().setBody(ResponseStubs.getResponseEmojisSuccess())
+                .setResponseCode(SUCCESS)
+
+        fun serviceEmojisError(): MockResponse =
+            MockResponse().setBody(ResponseStubs.getResponseError())
+                .setResponseCode(ERROR)
+
+        fun serviceCategoriesSuccess(): MockResponse =
+            MockResponse().setBody(ResponseStubs.getResponseCategoriesSuccess())
+                .setResponseCode(SUCCESS)
+
+        fun serviceCategoriesError(): MockResponse =
+            MockResponse().setBody(ResponseStubs.getResponseError())
+                .setResponseCode(ERROR)
     }
 }

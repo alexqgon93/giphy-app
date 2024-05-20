@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.alexesquerdo.giphy_app.components.atoms.cardAtom.GifCardAtom
-import com.alexesquerdo.giphy_app.domain.models.GiphyItem
+import com.alexesquerdo.giphy_app.domain.models.common.GiphyItem
 
 
 @Composable

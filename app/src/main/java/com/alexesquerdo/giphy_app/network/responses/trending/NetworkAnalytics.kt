@@ -12,5 +12,7 @@ data class NetworkAnalytics(
     @Json(name = "onload")
     val onLoad: NetworkUrl,
     @Json(name = "onsent")
-    val onSent: NetworkUrl
+    val onSent: NetworkUrl,
+    @Json(name = "onstart")
+    val onStart: NetworkUrl?
 )

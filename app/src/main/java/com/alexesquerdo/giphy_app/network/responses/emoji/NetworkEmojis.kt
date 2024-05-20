@@ -1,4 +1,4 @@
-package com.alexesquerdo.giphy_app.network.responses.trending
+package com.alexesquerdo.giphy_app.network.responses.emoji
 
 
 import com.alexesquerdo.giphy_app.network.responses.common.NetworkGiphyItem
@@ -8,9 +8,9 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class NetworkTrending(
+data class NetworkEmojis(
     @Json(name = "data")
-    val giphyItem: List<NetworkGiphyItem>,
+    val emojis: List<NetworkGiphyItem>,
     @Json(name = "meta")
     val meta: NetworkMeta,
     @Json(name = "pagination")

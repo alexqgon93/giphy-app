@@ -1,4 +1,4 @@
-package com.alexesquerdo.giphy_app.network.responses.trending
+package com.alexesquerdo.giphy_app.network.responses.common
 
 
 import com.squareup.moshi.Json

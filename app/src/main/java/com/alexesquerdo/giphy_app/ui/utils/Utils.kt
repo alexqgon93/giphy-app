@@ -1,6 +1,6 @@
 package com.alexesquerdo.giphy_app.ui.utils
 
-import com.alexesquerdo.giphy_app.domain.models.GiphyItem
+import com.alexesquerdo.giphy_app.domain.models.common.GiphyItem
 
 fun filterGiphyItemsByTitle(
     giphyItems: List<GiphyItem>,

@@ -1,15 +1,11 @@
-package com.alexesquerdo.giphy_app.network.responses.trending
+package com.alexesquerdo.giphy_app.network.responses.common
 
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class NetworkOriginal(
-    @Json(name = "frames")
-    val frames: String,
-    @Json(name = "hash")
-    val hash: String,
+data class NetworkFixedWidth(
     @Json(name = "height")
     val height: String,
     @Json(name = "mp4")
