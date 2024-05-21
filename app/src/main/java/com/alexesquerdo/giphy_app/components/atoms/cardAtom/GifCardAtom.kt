@@ -17,7 +17,7 @@ import coil.decode.ImageDecoderDecoder
 import coil.request.ImageRequest
 import com.alexesquerdo.giphy_app.R
 import com.alexesquerdo.giphy_app.components.atoms.shimmer.ShimmerCard
-import com.alexesquerdo.giphy_app.domain.models.GiphyItem
+import com.alexesquerdo.giphy_app.domain.models.common.GiphyItem
 
 @Composable
 fun GifCardAtom(gifItem: GiphyItem, modifier: Modifier = Modifier) = Card(

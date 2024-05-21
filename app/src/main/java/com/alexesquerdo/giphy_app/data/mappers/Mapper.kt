@@ -1,25 +1,33 @@
 package com.alexesquerdo.giphy_app.data.mappers
 
-import com.alexesquerdo.giphy_app.domain.common.Measures
-import com.alexesquerdo.giphy_app.domain.models.Analytics
-import com.alexesquerdo.giphy_app.domain.models.Images
-import com.alexesquerdo.giphy_app.domain.models.Meta
-import com.alexesquerdo.giphy_app.domain.common.Url
-import com.alexesquerdo.giphy_app.domain.models.GiphyItem
-import com.alexesquerdo.giphy_app.domain.models.Original
-import com.alexesquerdo.giphy_app.domain.models.Pagination
-import com.alexesquerdo.giphy_app.domain.models.Trending
-import com.alexesquerdo.giphy_app.domain.models.User
+import com.alexesquerdo.giphy_app.domain.models.categories.Categories
+import com.alexesquerdo.giphy_app.domain.models.categories.Category
+import com.alexesquerdo.giphy_app.domain.models.categories.Subcategory
+import com.alexesquerdo.giphy_app.domain.models.common.Measures
+import com.alexesquerdo.giphy_app.domain.models.treding.Analytics
+import com.alexesquerdo.giphy_app.domain.models.treding.Images
+import com.alexesquerdo.giphy_app.domain.models.common.Meta
+import com.alexesquerdo.giphy_app.domain.models.common.Url
+import com.alexesquerdo.giphy_app.domain.models.common.GiphyItem
+import com.alexesquerdo.giphy_app.domain.models.common.Original
+import com.alexesquerdo.giphy_app.domain.models.common.Pagination
+import com.alexesquerdo.giphy_app.domain.models.treding.Trending
+import com.alexesquerdo.giphy_app.domain.models.common.User
+import com.alexesquerdo.giphy_app.domain.models.emoji.Emojis
+import com.alexesquerdo.giphy_app.network.responses.categories.NetworkCategories
+import com.alexesquerdo.giphy_app.network.responses.categories.NetworkCategory
+import com.alexesquerdo.giphy_app.network.responses.categories.NetworkSubcategory
 import com.alexesquerdo.giphy_app.network.responses.trending.NetworkAnalytics
 import com.alexesquerdo.giphy_app.network.responses.common.NetworkMeasures
+import com.alexesquerdo.giphy_app.network.responses.common.NetworkMeta
 import com.alexesquerdo.giphy_app.network.responses.trending.NetworkImages
-import com.alexesquerdo.giphy_app.network.responses.trending.NetworkMeta
 import com.alexesquerdo.giphy_app.network.responses.common.NetworkUrl
-import com.alexesquerdo.giphy_app.network.responses.trending.NetworkGiphyItem
-import com.alexesquerdo.giphy_app.network.responses.trending.NetworkOriginal
-import com.alexesquerdo.giphy_app.network.responses.trending.NetworkPagination
+import com.alexesquerdo.giphy_app.network.responses.common.NetworkGiphyItem
+import com.alexesquerdo.giphy_app.network.responses.common.NetworkOriginal
+import com.alexesquerdo.giphy_app.network.responses.common.NetworkPagination
 import com.alexesquerdo.giphy_app.network.responses.trending.NetworkTrending
-import com.alexesquerdo.giphy_app.network.responses.trending.NetworkUser
+import com.alexesquerdo.giphy_app.network.responses.common.NetworkUser
+import com.alexesquerdo.giphy_app.network.responses.emoji.NetworkEmojis
 
 fun NetworkTrending.toDomainModel() = Trending(
     giphyItems = giphyItem.map { it.toDomainModel() },
@@ -28,9 +36,9 @@ fun NetworkTrending.toDomainModel() = Trending(
 )
 
 fun NetworkGiphyItem.toDomainModel() = GiphyItem(
-    altText = altText,
-    analytics = analytics.toDomainModel(),
-    analyticsResponsePayload = analyticsResponsePayload,
+    altText = altText ?: "",
+    analytics = analytics?.toDomainModel(),
+    analyticsResponsePayload = analyticsResponsePayload ?: "",
     bitlyGiUrl = bitlyGifUrl,
     bitlyUrl = bitlyUrl,
     contentUrl = contentUrl,
@@ -56,8 +64,9 @@ fun NetworkMeta.toDomainModel() = Meta(msg = msg, responseId = responseId, statu
 
 fun NetworkPagination.toDomainModel() = Pagination(
     count = count,
-    offset = offset,
-    totalCount = totalCount
+    offset = offset ?: 0,
+    totalCount = totalCount ?: 0,
+    nextCursor = nextCursor ?: 0,
 )
 
 fun NetworkAnalytics.toDomainModel() = Analytics(
@@ -114,3 +123,24 @@ fun NetworkOriginal.toDomainModel() = Original(
     webpSize = webpSize,
     width = width
 )
+
+fun NetworkEmojis.toDomainModel() = Emojis(
+    emojis = emojis.map { it.toDomainModel() },
+    meta = meta.toDomainModel(),
+    pagination = pagination.toDomainModel()
+)
+
+fun NetworkCategories.toDomainModel() = Categories(
+    categories = categories.map { it.toDomainModel() },
+    meta = meta.toDomainModel(),
+    pagination = pagination.toDomainModel()
+)
+
+fun NetworkCategory.toDomainModel() = Category(
+    gif = gif.toDomainModel(),
+    name = name,
+    nameEncoded = nameEncoded,
+    subcategories = subcategories.map { it.toDomainModel() },
+)
+
+fun NetworkSubcategory.toDomainModel() = Subcategory(name = name, nameEncoded = nameEncoded)

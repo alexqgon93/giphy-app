@@ -1,14 +1,16 @@
 package com.alexesquerdo.giphy_app.mocks
 
-import com.alexesquerdo.giphy_app.domain.common.Measures
-import com.alexesquerdo.giphy_app.domain.common.Url
-import com.alexesquerdo.giphy_app.domain.models.Analytics
-import com.alexesquerdo.giphy_app.domain.models.GiphyItem
-import com.alexesquerdo.giphy_app.domain.models.Images
-import com.alexesquerdo.giphy_app.domain.models.Meta
-import com.alexesquerdo.giphy_app.domain.models.Original
-import com.alexesquerdo.giphy_app.domain.models.Pagination
-import com.alexesquerdo.giphy_app.domain.models.Trending
+import com.alexesquerdo.giphy_app.domain.models.categories.Categories
+import com.alexesquerdo.giphy_app.domain.models.common.Measures
+import com.alexesquerdo.giphy_app.domain.models.common.Url
+import com.alexesquerdo.giphy_app.domain.models.treding.Analytics
+import com.alexesquerdo.giphy_app.domain.models.common.GiphyItem
+import com.alexesquerdo.giphy_app.domain.models.treding.Images
+import com.alexesquerdo.giphy_app.domain.models.common.Meta
+import com.alexesquerdo.giphy_app.domain.models.common.Original
+import com.alexesquerdo.giphy_app.domain.models.common.Pagination
+import com.alexesquerdo.giphy_app.domain.models.emoji.Emojis
+import com.alexesquerdo.giphy_app.domain.models.treding.Trending
 
 val gifItemPiscis = GiphyItem(
     altText = "vivendo",
@@ -224,6 +226,36 @@ val trendingMock = Trending(
     pagination = Pagination(
         count = 7736,
         offset = 5237,
-        totalCount = 6246
-    ),
+        totalCount = 6246,
+        nextCursor = null,
+
+        ),
+)
+
+val emojisMock = Emojis(
+    emojis = listOf(),
+    meta = Meta(
+        msg = "leo",
+        responseId = "efficitur",
+        status = 3881
+    ), pagination = Pagination(
+        count = 1729,
+        offset = 5880,
+        totalCount = null,
+        nextCursor = null
+    )
+)
+
+val categoriesMock = Categories(
+    categories = listOf(),
+    meta = Meta(
+        msg = "definitiones",
+        responseId = "no",
+        status = 7835
+    ), pagination = Pagination(
+        count = 5415,
+        offset = 8838,
+        totalCount = null,
+        nextCursor = null
+    )
 )

@@ -4,7 +4,9 @@ import com.alexesquerdo.giphy_app.domain.usecases.UseCaseTrending
 import dagger.hilt.android.lifecycle.HiltViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.alexesquerdo.giphy_app.domain.models.Trending
+import com.alexesquerdo.giphy_app.domain.models.treding.Trending
+import com.alexesquerdo.giphy_app.domain.usecases.UseCaseCategories
+import com.alexesquerdo.giphy_app.domain.usecases.UseCaseEmojis
 import com.alexesquerdo.giphy_app.ui.utils.filterGiphyItemsByTitle
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -15,6 +17,8 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val useCaseTrending: UseCaseTrending,
+    private val useCaseEmojis: UseCaseEmojis,
+    private val useCaseCategories: UseCaseCategories
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(HomeUiState())
@@ -35,6 +39,28 @@ class HomeViewModel @Inject constructor(
                         gifItems = trending.giphyItems
                     )
                 }
+            }
+        )
+    }
+
+    fun getEmojis() = viewModelScope.launch {
+        useCaseEmojis.invoke().fold(
+            ifLeft = {
+                _state.update { it.copy(screenState = ScreenState.ERROR) }
+            },
+            ifRight = { emojis ->
+                _state.update { it.copy(emojis = emojis) }
+            }
+        )
+    }
+
+    fun getCategories() = viewModelScope.launch {
+        useCaseCategories.invoke().fold(
+            ifLeft = {
+                _state.update { it.copy(screenState = ScreenState.ERROR) }
+            },
+            ifRight = { categories ->
+                _state.update { it.copy(categories = categories) }
             }
         )
     }

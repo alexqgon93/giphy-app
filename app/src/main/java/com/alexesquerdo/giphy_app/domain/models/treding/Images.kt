@@ -1,6 +1,7 @@
-package com.alexesquerdo.giphy_app.domain.models
+package com.alexesquerdo.giphy_app.domain.models.treding
 
-import com.alexesquerdo.giphy_app.domain.common.Measures
+import com.alexesquerdo.giphy_app.domain.models.common.Measures
+import com.alexesquerdo.giphy_app.domain.models.common.Original
 
 data class Images(
     val fixedHeight: Measures,

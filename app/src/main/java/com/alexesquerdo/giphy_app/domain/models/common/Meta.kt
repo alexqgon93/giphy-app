@@ -1,4 +1,4 @@
-package com.alexesquerdo.giphy_app.domain.models
+package com.alexesquerdo.giphy_app.domain.models.common
 
 data class Meta(
     val msg: String,

@@ -42,6 +42,8 @@ object ResponseStubs {
     }
 
     fun getResponseTrendingSuccess() = getResourceJson("trending/trendingSuccess.json")
+    fun getResponseEmojisSuccess() = getResourceJson("emojis/emojisSuccess.json")
+    fun getResponseCategoriesSuccess() = getResourceJson("categories/categoriesSuccess.json")
 
     fun getResponseError() = getResourceJson("common/responseError.json")
 }

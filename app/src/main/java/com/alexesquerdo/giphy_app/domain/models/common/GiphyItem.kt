@@ -1,8 +1,11 @@
-package com.alexesquerdo.giphy_app.domain.models
+package com.alexesquerdo.giphy_app.domain.models.common
+
+import com.alexesquerdo.giphy_app.domain.models.treding.Analytics
+import com.alexesquerdo.giphy_app.domain.models.treding.Images
 
 data class GiphyItem(
     val altText: String,
-    val analytics: Analytics,
+    val analytics: Analytics?,
     val analyticsResponsePayload: String,
     val bitlyGiUrl: String,
     val bitlyUrl: String,

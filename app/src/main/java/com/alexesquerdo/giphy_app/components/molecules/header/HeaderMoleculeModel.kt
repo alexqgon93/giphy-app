@@ -1,6 +1,6 @@
 package com.alexesquerdo.giphy_app.components.molecules.header
 
-import com.alexesquerdo.giphy_app.domain.models.GiphyItem
+import com.alexesquerdo.giphy_app.domain.models.common.GiphyItem
 
 data class HeaderMoleculeModel(
     val titleImage: Int?,

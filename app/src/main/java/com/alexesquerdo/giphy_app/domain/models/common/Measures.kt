@@ -1,4 +1,4 @@
-package com.alexesquerdo.giphy_app.domain.common
+package com.alexesquerdo.giphy_app.domain.models.common
 
 data class Measures(
     val height: String,

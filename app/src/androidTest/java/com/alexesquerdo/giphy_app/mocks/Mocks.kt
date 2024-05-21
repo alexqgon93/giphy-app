@@ -1,11 +1,11 @@
 package com.alexesquerdo.giphy_app.mocks
 
-import com.alexesquerdo.giphy_app.domain.common.Measures
-import com.alexesquerdo.giphy_app.domain.common.Url
-import com.alexesquerdo.giphy_app.domain.models.Analytics
-import com.alexesquerdo.giphy_app.domain.models.GiphyItem
-import com.alexesquerdo.giphy_app.domain.models.Images
-import com.alexesquerdo.giphy_app.domain.models.Original
+import com.alexesquerdo.giphy_app.domain.models.common.Measures
+import com.alexesquerdo.giphy_app.domain.models.common.Url
+import com.alexesquerdo.giphy_app.domain.models.treding.Analytics
+import com.alexesquerdo.giphy_app.domain.models.common.GiphyItem
+import com.alexesquerdo.giphy_app.domain.models.treding.Images
+import com.alexesquerdo.giphy_app.domain.models.common.Original
 
 val gifItemMock = GiphyItem(
     altText = "vivendo",

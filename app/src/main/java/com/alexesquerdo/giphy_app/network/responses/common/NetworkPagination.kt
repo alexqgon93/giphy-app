@@ -1,4 +1,4 @@
-package com.alexesquerdo.giphy_app.network.responses.trending
+package com.alexesquerdo.giphy_app.network.responses.common
 
 
 import com.squareup.moshi.Json
@@ -9,7 +9,9 @@ data class NetworkPagination(
     @Json(name = "count")
     val count: Int,
     @Json(name = "offset")
-    val offset: Int,
+    val offset: Int?,
     @Json(name = "total_count")
-    val totalCount: Int
+    val totalCount: Int?,
+    @Json(name = "next_cursor")
+    val nextCursor: Int?,
 )
